@@ -1,0 +1,27 @@
+<%- include('layouts/head') %>
+<%- include('layouts/nav') %>
+
+    <section class="student-names-container">
+        <h2><a href="/majors" title="Back">&laquo;</a></h2>
+        <div class="cards-student">
+            <% fields.forEach(({id_number, fullname, major}) => { %>
+                <div class="card-student">
+                    <span title="ID Number"><%= id_number %></span>
+                    <div class="student-identity">
+                        <h3><%= fullname %></h3>
+                        <p><%= major %></p>
+                    </div>
+                    <div class="icon-action-card">
+                        <a href="/majors/<%= major %>/update/<%= id_number %>">
+                            <img src="/icons/edit.svg" alt="editIcon" title="Edit">
+                        </a>
+                        <a href="/majors/<%= major %>/delete/<%= id_number %>">
+                            <img src="/icons/delete.svg" alt="deleteIcon" title="Delete">
+                        </a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+
+<%- include('layouts/foot') %>

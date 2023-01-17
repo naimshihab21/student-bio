@@ -1,0 +1,18 @@
+<%- include('layouts/head') %> 
+<%- include('layouts/nav') %>
+
+    <% if (fields.length === 0) { %>
+        <section class="status-major-total">
+            <h2>No Data</h2>
+        </section>
+    <% } %>
+    
+    <section class="majors-container">
+        <div class="major">
+            <% fields.forEach(({major}) => { %>
+                <a href="majors/<%= major %> "><%= major %></a>
+            <% }) %>
+        </div>
+    </section>
+
+<%- include('layouts/foot') %>
